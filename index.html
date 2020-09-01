@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Todo Application - VueJs</title>
+    </head>
+
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+
+    <body>
+        <div id="app">
+            <h3>{{title}}</h3>
+
+            <form @submit.prevent="addTodo">
+                <label>Enter a new task:</label>
+                <input type="text" v-model="todo" />
+
+                <button type="submit">Add To Do</button>
+
+                <ul>
+                    <li v-for="task in allTasks" :key="task.title">
+                        {{ task.title }}
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+
+        <!-- VueJs CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- Custom JS -->
+        <script src="index.js"></script>
+    </body>
+</html>
